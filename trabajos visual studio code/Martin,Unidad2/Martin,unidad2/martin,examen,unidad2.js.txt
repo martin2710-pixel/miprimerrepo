@@ -1,0 +1,48 @@
+class Calculadora { 
+// Suma
+sumar(a, b) {  
+    return a + b;
+}
+// Resta
+restar(a, b) {  
+    return a - b;
+}
+// Multiplicación
+multiplicar(a, b) {
+    return a * b;
+}
+// Division
+dividir(a, b) {  
+    if (b === 0) {
+        throw new Error("No se puede dividir entre cero.");
+    }
+    return a / b;
+}
+// Potencia
+potencia(base, exponente) {
+    return Math.pow (base, exponente);
+    }
+// Raiz enésima
+raizEnesima(base, n) { 
+    return Math.pow(base, 1 / n);
+    }
+}
+console.log("Ejercicio 1: Calculadora de operaciones matemáticas");
+// Ejemplo de uso
+const calculadora = new Calculadora();
+for (let i = 1; i <= 3; i++) {
+    let j = 1;
+    // Inicia el ciclo para j desde 1 hasta 3
+   while (j < 3) {
+j++;
+console.log("Multiplicación ${i} * ${j}:", calculadora.multiplicar(i, j)); // Multiplicación 
+console.log("Raiz ${i} de ${j}:", calculadora.raizEnesima(j, i)); // Raíz enésima de j 
+console.log("Potencia ${i} ^ ${j}:", calculadora.potencia(i, j)); // Potencia j de i 
+console.log("División ${i} / Stj):", calculadora.dividir(i, j)); // División i entre j 
+console.log("Suma ${i} + ${j}:", calculadora.sumar(i, j)); // Suma i más j
+console.log("Resta ${i} - ${j}:" , calculadora.restar(i, j)); // Resta i menos j
+console.log("Raiz cuadrada de ${i}:", calculadora.raizEnesima(i, 2)); // Raíz cuadrada de i 
+console.log("Raíz cúbica de ${i}:", calculadora.raizEnesima(i, 3)); // Raíz cúbica de i
+    }
+}
+console.log("Ejercicio terminado.");

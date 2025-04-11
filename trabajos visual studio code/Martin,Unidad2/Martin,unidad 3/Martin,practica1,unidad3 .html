@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Calculdora Practica 1 Unidad 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculadora Interactiva</h1>
+        <input type="text" id="input1" placeholder="Numero 1">
+        <input type="text" id="input2" placeholder="Numero 2">
+        <select id="operation">
+            <option value="add">Suma</option>
+            <option value="subtract">Resta</option>
+            <option value="multiply">Multiplicacion</option>
+            <option value="divide">Division</option>
+            <option value="sqrt">Raiz Cuadrada (solo primer numero)</option>
+            <option value="power">Potencia</option>
+            <option value="percentage">Porcentaje</option>
+        </select>
+        <button onclick="calculate()">Calcular</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('input1').value);
+            const num2 = parseFloat(document.getElementById('input2').value);
+            const operation = document.getElementById('operation').value;
+            let result;
+
+            if (isNaN(num1) || (isNaN(num2) && operation !== 'sqrt')) {
+                document.getElementById('result').textContent = "Error: Ingrese números válidos";
+                return;
+            }
+
+            switch (operation) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    result = num2 !== 0 ? num1 / num2 : "Error: División entre cero";
+                    break;
+                case 'sqrt':
+                    result = Math.sqrt(num1);
+                    break;
+                case 'power':
+                    result = Math.pow(num1, num2);
+                    break;
+                case 'percentage':
+                    result = (num1 / 100) * num2;
+                    break;
+                default:
+                    result = "Operación no válida";
+            }
+            document.getElementById('result').textContent = `Resultado: ${result}`;
+        }
+    </script>
+</body>
+</html>

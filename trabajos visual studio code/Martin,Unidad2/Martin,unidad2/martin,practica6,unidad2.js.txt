@@ -1,0 +1,9 @@
+let admin = 'Martin';
+let usuario =admin;
+if(usuario ==='Martin'){
+    console.log('Autorizado!');
+}else if (usuario ==='Emilia'){
+    console.log('Autorizado con privilegios');
+}else{
+    console.log('No autorizado!');
+}

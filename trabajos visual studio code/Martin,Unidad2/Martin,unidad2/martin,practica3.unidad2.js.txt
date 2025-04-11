@@ -1,0 +1,35 @@
+for (let i=1;i<=5;i++){
+    console.log(i)
+}
+console.log("-------------------------");
+colores=["rojo", "azul", "verde", "amarillo", "naranja"]
+for  (let color of colores){
+    console.log(color)
+}
+console.log("-------------------------")
+let persona={
+    nombre:"Martin",
+    apellido:"Lozano",
+    // edad:17,
+    // // sexo:"hombre",
+    // // ocupacion:"el que saca la chamba"
+}
+
+for(let clave in persona){
+    console.log(clave+":"+persona[clave]);
+}
+console.log("--------------------------");
+let num=1
+let numero=1
+while (numero<100){
+    numero=num**2
+    console.log(numero)
+num++
+}
+console.log('el numero que mas se acerca a 100 cuyo cuadrado es menor o igual que 100 es: '+string(nume-1))
+console.log("--------------------------");
+let n=1
+do{
+    console.log(2*n)
+    n++
+}while(2*n<=10)

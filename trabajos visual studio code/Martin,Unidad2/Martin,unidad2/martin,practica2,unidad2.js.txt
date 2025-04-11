@@ -1,0 +1,30 @@
+let edad=20;
+// let accion='colocar';
+// let numero;
+if (edad>=18) {
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+
+switch(accion){
+   case "crear" :
+         console.log("la accion es crear")
+break
+case "borrar" :
+         console.log("la accion es borrar")
+break;
+case "actualizar" :
+         console.log("la accion es actualizar")
+break;
+case "colocar" :
+         console.log("la accion es colocar")
+break;
+default :
+    console.log("Accion no reconocida");
+}
+
+let numero = 7;
+
+let esPar = (numero % 2 === 0) ? "es par" : "es impar";
+console.log("El numero ingresado ${esPar}. ");
